@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melinda C. Miller — Economic History</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f1e7;
+    --paper-2:#efe7d7;
+    --ink:#1c1813;
+    --ink-soft:#544b3e;
+    --accent:#7a2e2e;
+    --accent-bright:#9a3b3b;
+    --gold:#a9823c;
+    --rule:rgba(28,24,19,.16);
+    --rule-soft:rgba(28,24,19,.09);
+    --display:"Fraunces",Georgia,serif;
+    --body:"Newsreader",Georgia,serif;
+    --ui:"Hanken Grotesk",-apple-system,sans-serif;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:90px}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:19px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:1;pointer-events:none;
+    opacity:.4;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 6vw;position:relative;z-index:2}
+
+  a{color:inherit;text-decoration:none}
+  .ui{font-family:var(--ui)}
+  .eyebrow{
+    font-family:var(--ui);font-size:.72rem;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--accent);
+  }
+  .section-no{
+    font-family:var(--ui);font-size:.72rem;font-weight:600;letter-spacing:.2em;
+    color:var(--gold);text-transform:uppercase;
+  }
+
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,241,231,.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:.85rem 6vw;
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  }
+  .brand{font-family:var(--display);font-weight:600;font-size:1.15rem;letter-spacing:-.01em}
+  .brand span{color:inherit}
+  nav.links{display:flex;gap:1.9rem}
+  nav.links a{
+    font-family:var(--ui);font-size:.82rem;font-weight:500;letter-spacing:.04em;
+    color:var(--ink-soft);position:relative;padding:.2rem 0;transition:color .25s;
+  }
+  nav.links a::after{
+    content:"";position:absolute;left:0;bottom:-2px;height:1.5px;width:0;
+    background:var(--accent);transition:width .3s ease;
+  }
+  nav.links a:hover,nav.links a.active{color:var(--ink)}
+  nav.links a:hover::after,nav.links a.active::after{width:100%}
+  .menu-btn{display:none;font-family:var(--ui);font-size:.8rem;font-weight:600;
+    letter-spacing:.1em;text-transform:uppercase;background:none;border:1px solid var(--rule);
+    padding:.45rem .8rem;border-radius:2px;cursor:pointer;color:var(--ink)}
+
+  .hero{padding:5.5rem 0 4.5rem;border-bottom:1px solid var(--rule)}
+  .hero-grid{display:grid;grid-template-columns:1.55fr .85fr;gap:4rem;align-items:end}
+  .hero h1{
+    font-family:var(--display);font-weight:500;line-height:.95;letter-spacing:-.03em;
+    font-size:clamp(3.2rem,9vw,7.2rem);margin:.5rem 0 1.4rem;
+    font-variation-settings:"opsz" 120,"SOFT" 0;
+  }
+  .hero h1 em{font-style:italic;color:inherit}
+  .hero-tag{font-size:1.18rem;color:var(--ink-soft);max-width:36ch;line-height:1.5}
+  .hero-meta{margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;
+    font-family:var(--ui);font-size:.82rem;color:var(--ink-soft)}
+  .hero-meta span{display:inline-flex;align-items:center;gap:.5rem}
+  .hero-meta span::before{content:"";width:5px;height:5px;background:var(--gold);border-radius:50%}
+  .hero-meta a{color:inherit;border-bottom:1px solid var(--rule);transition:color .2s,border-color .2s}
+  .hero-meta a:hover{color:var(--accent);border-color:var(--accent)}
+  .portrait{
+    aspect-ratio:4/5;border:1px solid var(--rule);
+    background:linear-gradient(160deg,var(--paper-2),#e4d9c4);
+    position:relative;overflow:hidden;
+  }
+  .portrait img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.15) contrast(1.02)}
+  .portrait .frame{position:absolute;inset:10px;border:1px solid rgba(255,255,255,.25);pointer-events:none}
+  .portrait.empty{display:flex;align-items:flex-end;justify-content:center}
+  .portrait.empty::after{content:"Add portrait.jpg";font-family:var(--ui);font-size:.7rem;
+    letter-spacing:.12em;text-transform:uppercase;color:rgba(28,24,19,.35);padding-bottom:1.2rem}
+
+  section.block{padding:5rem 0;border-bottom:1px solid var(--rule)}
+  .head{display:grid;grid-template-columns:auto 1fr;gap:1.3rem;align-items:baseline;margin-bottom:2.6rem}
+  .head h2{font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,4vw,2.9rem);
+    letter-spacing:-.02em;line-height:1}
+  .head .meta{justify-self:end;text-align:right;font-family:var(--ui);font-size:.8rem;color:var(--ink-soft)}
+
+  .about-grid{display:grid;grid-template-columns:1fr 2fr;gap:3.5rem}
+  .about-aside{font-family:var(--ui);font-size:.86rem;line-height:1.7;color:var(--ink-soft)}
+  .about-aside dt{font-weight:600;color:var(--ink);letter-spacing:.03em;margin-top:1.2rem}
+  .about-aside dt:first-child{margin-top:0}
+  .about-prose p{margin-bottom:1.15rem;max-width:62ch}
+  .about-prose p:last-child{margin-bottom:0}
+  .drop::first-letter{font-family:var(--display);font-size:3.4rem;line-height:.8;
+    float:left;padding:.05em .12em 0 0;color:var(--accent);font-weight:500}
+
+  .research-list{display:grid;gap:0}
+  .research-item{display:grid;grid-template-columns:auto 1fr;gap:2rem;
+    padding:1.7rem 0;border-top:1px solid var(--rule-soft);align-items:start}
+  .research-item:first-child{border-top:none;padding-top:0}
+  .research-item .idx{font-family:var(--display);font-style:italic;font-size:1.5rem;color:var(--gold)}
+  .research-item h3{font-family:var(--display);font-weight:500;font-size:1.45rem;margin-bottom:.4rem;
+    transition:color .2s}
+  .research-item:hover h3{color:var(--accent)}
+  .research-item p{color:var(--ink-soft);max-width:60ch;font-size:1.02rem}
+  .theme-papers{margin-top:1.3rem;border-top:1px solid var(--rule-soft);padding-top:.3rem}
+  .theme-papers .pub{padding:.7rem 0}
+  .theme-papers .cite{font-size:.97rem}
+  .tags{margin-top:.7rem;display:flex;flex-wrap:wrap;gap:.45rem}
+  .tag{font-family:var(--ui);font-size:.7rem;font-weight:500;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--rule);
+    padding:.25rem .6rem;border-radius:2px}
+
+  .pub-group{margin-bottom:2.6rem}
+  .pub-group:last-child{margin-bottom:0}
+  .pub-group h3{font-family:var(--ui);font-size:.78rem;font-weight:600;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:1.3rem;padding-bottom:.6rem;
+    border-bottom:1px solid var(--rule-soft)}
+  .pub{padding:.95rem 0;
+    border-bottom:1px solid var(--rule-soft)}
+  .pub:last-child{border-bottom:none}
+  .pub .year{font-family:var(--ui);font-size:.85rem;font-weight:600;color:var(--gold);padding-top:.15rem}
+  .pub .cite{font-size:1.04rem;line-height:1.55}
+  .pub .cite .title{font-style:italic}
+  .pub .cite .venue{color:var(--ink-soft)}
+  .pub .cite a{border-bottom:1px solid var(--rule);transition:border-color .2s,color .2s}
+  .pub .cite a:hover{color:var(--accent);border-color:var(--accent)}
+  .pub .cite .note{font-family:var(--ui);font-size:.78rem;color:var(--accent);font-style:normal}
+
+  .courses{display:grid;grid-template-columns:1fr 1fr;gap:0 3.5rem}
+  .course{padding:1.3rem 0;border-top:1px solid var(--rule-soft)}
+  .course .code{font-family:var(--ui);font-size:.76rem;font-weight:600;letter-spacing:.1em;
+    color:var(--accent);text-transform:uppercase}
+  .course h3{font-family:var(--display);font-weight:500;font-size:1.25rem;margin:.25rem 0 .35rem}
+  .course p{font-size:.95rem;color:var(--ink-soft)}
+  .course .term{font-family:var(--ui);font-size:.78rem;color:var(--ink-soft);margin-top:.4rem}
+  .placeholder-note{font-family:var(--ui);font-size:.8rem;color:var(--ink-soft);
+    background:var(--paper-2);border-left:2px solid var(--gold);padding:.7rem 1rem;
+    margin-bottom:2rem;border-radius:0 2px 2px 0}
+
+  .cv-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:3.5rem;align-items:start}
+  .cv-call{border:1px solid var(--rule);padding:2rem;background:var(--paper-2)}
+  .cv-call p{font-size:1rem;color:var(--ink-soft);margin-bottom:1.4rem}
+  .btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--ui);font-size:.85rem;
+    font-weight:600;letter-spacing:.04em;background:var(--ink);color:var(--paper);
+    padding:.8rem 1.4rem;border-radius:2px;transition:background .25s,transform .15s}
+  .btn:hover{background:var(--accent);transform:translateY(-2px)}
+  .timeline dt{font-family:var(--ui);font-size:.74rem;font-weight:600;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--accent);margin-top:1.8rem}
+  .timeline dt:first-child{margin-top:0}
+  .timeline dd{display:grid;grid-template-columns:5rem 1fr;gap:1.2rem;padding:.6rem 0;
+    border-bottom:1px solid var(--rule-soft)}
+  .timeline dd .yr{font-family:var(--ui);font-size:.85rem;color:var(--ink-soft)}
+  .timeline dd .what strong{font-weight:500}
+  .timeline dd .what strong.org{font-family:var(--display);font-size:1.3rem;letter-spacing:-.01em;line-height:1.2;display:inline-block;margin-bottom:.15rem}
+  .timeline dd .what span{color:var(--ink-soft);font-size:.95rem}
+
+  #contact{border-bottom:none}
+  .contact-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:3.5rem;align-items:start}
+  .contact-grid h2{font-family:var(--display);font-weight:500;font-size:clamp(2.2rem,5vw,3.6rem);
+    letter-spacing:-.02em;line-height:1;margin-bottom:1.2rem}
+  .contact-grid .lead{font-size:1.12rem;color:var(--ink-soft);max-width:42ch}
+  .contact-list dt{font-family:var(--ui);font-size:.72rem;font-weight:600;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--ink-soft);margin-top:1.5rem}
+  .contact-list dt:first-child{margin-top:0}
+  .contact-list dd{font-size:1.08rem;margin-top:.2rem}
+  .contact-list dd a{border-bottom:1px solid var(--rule);transition:border-color .2s,color .2s}
+  .contact-list dd a:hover{color:var(--accent);border-color:var(--accent)}
+  .socials{margin-top:1.6rem;display:flex;flex-wrap:wrap;gap:.6rem}
+  .socials a{font-family:var(--ui);font-size:.78rem;font-weight:500;letter-spacing:.04em;
+    border:1px solid var(--rule);padding:.45rem .85rem;border-radius:2px;transition:.2s}
+  .socials a:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+  footer{padding:2.6rem 0;border-top:1px solid var(--rule)}
+  .foot-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+    font-family:var(--ui);font-size:.78rem;color:var(--ink-soft);letter-spacing:.03em}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:860px){
+    body{font-size:18px}
+    nav.links{position:absolute;top:100%;right:0;left:0;flex-direction:column;gap:0;
+      background:var(--paper);border-bottom:1px solid var(--rule);
+      max-height:0;overflow:hidden;transition:max-height .3s ease}
+    nav.links.open{max-height:400px}
+    nav.links a{padding:.95rem 6vw;border-top:1px solid var(--rule-soft)}
+    .menu-btn{display:block}
+    .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+    .portrait{max-width:300px}
+    .about-grid,.cv-grid,.contact-grid{grid-template-columns:1fr;gap:2rem}
+    .courses{grid-template-columns:1fr}
+    .head .meta{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">Melinda C. <span>Miller</span></a>
+    <button class="menu-btn ui" id="menuBtn" aria-label="Menu">Menu</button>
+    <nav class="links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#papers">Publications</a>
+      <a href="#publications">Writing</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow reveal">Assistant Professor of Economics · Virginia Tech</p>
+        <h1 class="reveal">Melinda C. <em>Miller</em></h1>
+        <div class="hero-meta reveal">
+          <span>Department of Economics</span>
+          <span>David H. Kellogg Center for Philosophy, Politics, and Economics</span>
+          <span>millermc at vt.edu</span>
+          <span><a href="https://scholar.google.com/citations?user=7XX9rRwAAAAJ" target="_blank" rel="noopener">Google Scholar</a></span>
+          <span><a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=5037015" target="_blank" rel="noopener">SSRN</a></span>
+        </div>
+      </div>
+      <div class="portrait reveal">
+        <img src="portrait.jpg" alt="Melinda C. Miller" onerror="this.style.display='none';this.parentElement.classList.add('empty')">
+        <div class="frame"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="block wrap" id="about">
+    <div class="head reveal">
+      <span class="section-no">§ 01</span>
+      <h2>About</h2>
+      <div class="meta">Biography<br>& fields</div>
+    </div>
+    <div class="about-grid">
+      <aside class="about-aside reveal">
+        <dl>
+          <dt>Fields</dt>
+          <dd>Economic history · Race &amp; inequality · Federal Indian policy · Slavery &amp; emancipation · Anthropometric history</dd>
+        </dl>
+      </aside>
+      <div class="about-prose reveal">
+        <p class="drop">I examine how institutions, property rights, and race have shaped economic outcomes across American history. I use the tools of quantitative economic history alongside archival research to recover the experiences of communities that conventional records often overlook.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="block wrap" id="research">
+    <div class="head reveal">
+      <span class="section-no">§ 02</span>
+      <h2>Research</h2>
+      <div class="meta">Current<br>lines of inquiry</div>
+    </div>
+    <div class="research-list">
+      <article class="research-item reveal">
+        <span class="idx">i.</span>
+        <div>
+          <h3>Land &amp; Racial Wealth Inequality</h3>
+          <p>The role of land ownership in Black mobility and wealth after emancipation, and how the failure to redistribute land shaped inequality in the postbellum South.</p>
+          <div class="tags"><span class="tag">Racial wealth gap</span><span class="tag">Emancipation</span><span class="tag">Land</span></div>
+          <div class="theme-papers">
+            <div class="pub">
+              <p class="cite"><span class="title">To Have Land and Turn and Till It: Land and Black Intergenerational Mobility, 1880–1900.</span> <span class="note">Recommended for publication with minor revisions, Review of Black Political Economy.</span></p>
+            </div>
+            <div class="pub">
+              <p class="cite"><a href="https://doi.org/10.1162/rest_a_00842" target="_blank" rel="noopener"><span class="title">"The Righteous and Reasonable Ambition to Become a Landholder:" Land and Racial Inequality in the Postbellum South.</span></a> <span class="venue">Review of Economics and Statistics, 102(2), May 2020.</span></p>
+            </div>
+            <div class="pub">
+              <p class="cite"><a href="https://doi.org/10.1007/s13524-018-0711-6" target="_blank" rel="noopener"><span class="title">"Destroyed by Slavery?" Slavery and African American Family Formation Following Emancipation.</span></a> <span class="venue">Demography, 55(5), October 2018.</span></p>
+            </div>
+            <div class="pub">
+              <p class="cite"><a href="https://doi.org/10.1257/aer.101.3.371" target="_blank" rel="noopener"><span class="title">Land and Racial Wealth Inequality.</span></a> <span class="venue">American Economic Review: Papers &amp; Proceedings, 101(3), 371–376.</span></p>
+            </div>
+            <div class="pub">
+              <p class="cite"><span class="title">The Southern Homestead Act and the Racial Gap in Property Ownership.</span> <span class="note">In progress.</span></p>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="research-item reveal">
+        <span class="idx">ii.</span>
+        <div>
+          <h3>Federal Indian Policy</h3>
+          <p>How federal policy toward Native nations shaped economic life — from assimilation and allotment to relocation — drawing on the history of the Cherokee Nation and other communities.</p>
+          <div class="tags"><span class="tag">Federal Indian policy</span><span class="tag">Cherokee Nation</span><span class="tag">Assimilation</span></div>
+          <div class="theme-papers">
+            <div class="pub">
+              <p class="cite"><a href="https://doi.org/10.1007/s11127-023-01049-w" target="_blank" rel="noopener"><span class="title">Assimilation and Economic Development: The Case of Federal Indian Policy.</span></a> <span class="venue">Public Choice, 199(3), 387–404, June 2024.</span></p>
+            </div>
+            <div class="pub">
+              <p class="cite"><a href="https://doi.org/10.4054/DemRes.2022.46.37" target="_blank" rel="noopener"><span class="title">Race and Agriculture During the Assimilation Era: Evidence from the Eastern Band of Cherokee Indians.</span></a> <span class="venue">Demographic Research, 46(37), 1109–1136, June 2022. With Matt Gregg.</span></p>
+            </div>
+            <div class="pub">
+              <p class="cite"><a href="https://drive.google.com/open?id=1whHc1SP_pF6DG2Dce2k_k2l9Y6vCSwxa" target="_blank" rel="noopener"><span class="title">"No Right of Citizenship": The 1863 Emancipation Acts of the Loyal Cherokee Council.</span></a> <span class="note">Preparing revision, Journal of American History. With Rachel Purvis.</span></p>
+            </div>
+            <div class="pub">
+              <p class="cite"><span class="title">Inequality in Rural Settings: Evidence from New Microdata on Eastern Cherokees, 1894–1906.</span> <span class="note">Revision submitted, Journal of Economic History. With Matt Gregg.</span></p>
+            </div>
+            <div class="pub">
+              <p class="cite"><span class="title">The Long-Run Distributional Effects from Land Titling: Evidence from American Indian Allotment.</span> <span class="note">In progress. With Matthew T. Gregg.</span></p>
+            </div>
+            <div class="pub">
+              <p class="cite"><span class="title">The Impact of Place-Based Policies on a Vulnerable Population: Evidence from American Indian Urban Relocation.</span> <span class="note">In progress. With Matthew T. Gregg.</span></p>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="research-item reveal">
+        <span class="idx">iii.</span>
+        <div>
+          <h3>Historical Data &amp; Quantitative Methods</h3>
+          <p>Building and interpreting historical datasets — from Dawes census records to anthropometric height samples.</p>
+          <div class="tags"><span class="tag">Methods</span><span class="tag">Anthropometrics</span><span class="tag">Census data</span></div>
+          <div class="theme-papers">
+            <div class="pub">
+              <p class="cite"><a href="https://doi.org/10.1016/j.eeh.2016.04.001" target="_blank" rel="noopener"><span class="title">Selection and Historical Height Data: Evidence from the 1892 Boas Sample of the Cherokee Nation.</span></a> <span class="venue">Explorations in Economic History, 61, July 2016.</span></p>
+            </div>
+            <div class="pub">
+              <p class="cite"><a href="https://doi.org/10.1080/01615440.2015.1013656" target="_blank" rel="noopener"><span class="title">Dawes Cards and Indian Census Data.</span></a> <span class="venue">Historical Methods: A Journal of Quantitative and Interdisciplinary History, 48(4), 2015.</span></p>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="research-item reveal">
+        <span class="idx">iv.</span>
+        <div>
+          <h3>Institutions &amp; Inequality</h3>
+          <p>How institutions — communal ownership, citizenship, and marriage law — shaped living standards and the distribution of economic wellbeing.</p>
+          <div class="tags"><span class="tag">Institutions</span><span class="tag">Standard of living</span><span class="tag">Law</span></div>
+          <div class="theme-papers">
+            <div class="pub">
+              <p class="cite"><span class="title">Communal Institutions and the Biological Standard of Living: Evidence from the Amana Colonies.</span> <span class="note">Under review, Social Science History.</span></p>
+            </div>
+            <div class="pub">
+              <p class="cite"><span class="title">Solely by Reason of Her Marriage: The Effect of the 1907 Expatriation Act on Marriage Decisions.</span> <span class="note">In progress.</span></p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PUBLISHED PAPERS -->
+  <section class="block wrap" id="papers">
+    <div class="head reveal">
+      <span class="section-no">§ 03</span>
+      <h2>Published Papers</h2>
+      <div class="meta">Peer-reviewed<br>journal articles</div>
+    </div>
+    <div class="pub-group reveal">
+      <div class="pub">
+        <p class="cite"><a href="https://doi.org/10.1007/s11127-023-01049-w" target="_blank" rel="noopener"><span class="title">Assimilation and Economic Development: The Case of Federal Indian Policy.</span></a> <span class="venue">Public Choice, 199(3), 387–404, June 2024.</span></p>
+      </div>
+      <div class="pub">
+        <p class="cite"><a href="https://doi.org/10.4054/DemRes.2022.46.37" target="_blank" rel="noopener"><span class="title">Race and Agriculture During the Assimilation Era: Evidence from the Eastern Band of Cherokee Indians.</span></a> <span class="venue">Demographic Research, 46(37), 1109–1136, June 2022. With Matt Gregg.</span></p>
+      </div>
+      <div class="pub">
+        <p class="cite"><a href="https://doi.org/10.1162/rest_a_00842" target="_blank" rel="noopener"><span class="title">"The Righteous and Reasonable Ambition to Become a Landholder:" Land and Racial Inequality in the Postbellum South.</span></a> <span class="venue">Review of Economics and Statistics, 102(2), May 2020.</span></p>
+      </div>
+      <div class="pub">
+        <p class="cite"><a href="https://doi.org/10.1007/s13524-018-0711-6" target="_blank" rel="noopener"><span class="title">"Destroyed by Slavery?" Slavery and African American Family Formation Following Emancipation.</span></a> <span class="venue">Demography, 55(5), October 2018.</span></p>
+      </div>
+      <div class="pub">
+        <p class="cite"><a href="https://doi.org/10.1016/j.eeh.2016.04.001" target="_blank" rel="noopener"><span class="title">Selection and Historical Height Data: Evidence from the 1892 Boas Sample of the Cherokee Nation.</span></a> <span class="venue">Explorations in Economic History, 61, July 2016.</span></p>
+      </div>
+      <div class="pub">
+        <p class="cite"><a href="https://doi.org/10.1080/01615440.2015.1013656" target="_blank" rel="noopener"><span class="title">Dawes Cards and Indian Census Data.</span></a> <span class="venue">Historical Methods: A Journal of Quantitative and Interdisciplinary History, 48(4), 2015.</span></p>
+      </div>
+      <div class="pub">
+        <p class="cite"><a href="https://doi.org/10.1257/aer.101.3.371" target="_blank" rel="noopener"><span class="title">Land and Racial Wealth Inequality.</span></a> <span class="venue">American Economic Review: Papers &amp; Proceedings, 101(3), 371–376.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS & PUBLIC WRITING -->
+  <section class="block wrap" id="publications">
+    <div class="head reveal">
+      <span class="section-no">§ 04</span>
+      <h2>Reviews &amp; Public Writing</h2>
+      <div class="meta">Book reviews, op-eds<br>& media</div>
+    </div>
+
+    <div class="pub-group reveal">
+      <h3>Book Reviews</h3>
+      <div class="pub">
+        <p class="cite">Review of <span class="title">Between Slavery and Capitalism: The Legacy of Emancipation in the American South</span> by Martin Ruef (Princeton, 2014). <span class="venue">Journal of Southern History, 82(2).</span></p>
+      </div>
+      <div class="pub">
+        <p class="cite">Review of <a href="http://www.tandfonline.com/doi/abs/10.1080/03612759.2015.961838" target="_blank" rel="noopener"><span class="title">Trail Sisters: Freedwomen in Indian Territory, 1850–1890</span></a> by Linda Williams Reese (Texas Tech, 2013). <span class="venue">History: Reviews of New Books, 43(1).</span></p>
+      </div>
+      <div class="pub">
+        <p class="cite">Review of <a href="https://drive.google.com/file/d/0Bz2DBpaMaUB0d0RBaFdkbldsUlE/edit?usp=sharing" target="_blank" rel="noopener"><span class="title">Face Value: The Entwined Histories of Money and Race in America</span></a> by Michael O'Malley. <span class="venue">Journal of Economic History, 73, 885–887.</span></p>
+      </div>
+      <div class="pub">
+        <p class="cite">Review of <a href="http://eh.net/book_reviews/cotton-and-race-in-the-making-of-america-the-human-costs-of-economic-power/" target="_blank" rel="noopener"><span class="title">Cotton and Race in the Making of America: The Human Costs of Economic Power</span></a> by Gene Dattel. <span class="venue">EH.net.</span></p>
+      </div>
+    </div>
+
+    <div class="pub-group reveal">
+      <h3>Popular Press</h3>
+      <div class="pub">
+        <p class="cite"><a href="https://www.washingtonpost.com/outlook/2021/05/24/cherokee-nation-policies-after-civil-war-show-that-reparations-work/" target="_blank" rel="noopener"><span class="title">Cherokee Nation policies after the Civil War show that reparations work.</span></a> <span class="venue">Made by History, Washington Post.</span></p>
+      </div>
+      <div class="pub">
+        <p class="cite"><a href="http://opinionator.blogs.nytimes.com/2013/02/17/the-cherokees-free-their-slaves/" target="_blank" rel="noopener"><span class="title">The Cherokees Free Their Slaves.</span></a> <span class="venue">Disunion, New York Times.</span> With Rachel Purvis.</p>
+      </div>
+      <div class="pub">
+        <p class="cite"><a href="http://opinionator.blogs.nytimes.com/2013/12/18/doctor-teacher-soldier-spy/" target="_blank" rel="noopener"><span class="title">Doctor, Teacher, Soldier, Spy.</span></a> <span class="venue">Disunion, New York Times.</span> With Rachel Purvis.</p>
+      </div>
+    </div>
+
+    <div class="pub-group reveal">
+      <h3>Selected Media Coverage</h3>
+      <div class="pub">
+        <p class="cite"><a href="http://www.ssireview.org/blog/entry/a_plot_of_land_a_path_to_freedom" target="_blank" rel="noopener"><span class="title">A Plot of Land, a Path to Freedom.</span></a> <span class="venue">Stanford Social Innovation Review.</span></p>
+      </div>
+      <div class="pub">
+        <p class="cite"><a href="http://www.theatlantic.com/magazine/archive/2008/03/primary-sources/306635/?single_page=true" target="_blank" rel="noopener"><span class="title">Primary Sources.</span></a> <span class="venue">The Atlantic.</span></p>
+      </div>
+      <div class="pub">
+        <p class="cite"><a href="http://marginalrevolution.com/marginalrevolution/2007/12/would-it-have-h.html" target="_blank" rel="noopener"><span class="title">Would it have helped to give free slaves land?</span></a> <span class="venue">Marginal Revolution.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEACHING -->
+  <section class="block wrap" id="teaching">
+    <div class="head reveal">
+      <span class="section-no">§ 05</span>
+      <h2>Teaching</h2>
+      <div class="meta">Courses<br>taught</div>
+    </div>
+    <div class="courses">
+      <div class="course reveal">
+        <h3>US Economic History</h3>
+      </div>
+      <div class="course reveal">
+        <h3>Introduction to Philosophy, Politics, and Economics</h3>
+      </div>
+      <div class="course reveal">
+        <h3>Advanced Topics in Philosophy, Politics, and Economics</h3>
+      </div>
+      <div class="course reveal">
+        <h3>Economic History of Diversity and Inclusion</h3>
+      </div>
+      <div class="course reveal">
+        <h3>Analysis of Economic Data</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section class="block wrap" id="cv">
+    <div class="head reveal">
+      <span class="section-no">§ 06</span>
+      <h2>Curriculum Vitae</h2>
+      <div class="meta">Full record<br>of work</div>
+    </div>
+    <div class="cv-grid">
+      <div class="cv-call reveal">
+        <p>Download the full curriculum vitae, including complete publications, grants, talks, and service.</p>
+        <a class="btn" href="https://drive.google.com/file/d/1CtZ0SAfhW1VAwGo77Xmq00nCb05TLTBH/view?usp=share_link" target="_blank" rel="noopener">Download CV (PDF) ↓</a>
+      </div>
+      <dl class="timeline reveal">
+        <dt>Appointment</dt>
+        <dd><span class="yr">Current</span><span class="what"><strong class="org">Virginia Tech</strong><br><span>Assistant Professor of Economics</span><br><span>Core Faculty, David H. Kellogg Center for Philosophy, Politics, and Economics</span></span></dd>
+        <dt>Education</dt>
+        <dd><span class="yr">2008</span><span class="what"><strong>Ph.D., Economics</strong><br><span>University of Michigan</span></span></dd>
+        <dd><span class="yr">2005</span><span class="what"><strong>M.A., Economics</strong><br><span>University of Michigan</span></span></dd>
+        <dd><span class="yr">2000</span><span class="what"><strong>B.A., Economics</strong><br><span>Case Western Reserve University · Magna Cum Laude</span></span></dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="block wrap" id="contact">
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="section-no">§ 07</span>
+        <h2 style="margin-top:1rem">Get in touch</h2>
+      </div>
+      <dl class="contact-list reveal">
+        <dt>Email</dt>
+        <dd>millermc at vt.edu</dd>
+        <dt>Department</dt>
+        <dd>Department of Economics<br>Virginia Tech</dd>
+        <dt>Center</dt>
+        <dd>David H. Kellogg Center for<br>Philosophy, Politics, and Economics</dd>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span>© <span id="yr"></span> Melinda C. Miller</span>
+    <span>Virginia Tech · Department of Economics</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  const btn = document.getElementById('menuBtn');
+  const links = document.getElementById('navLinks');
+  btn.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = (Math.min(i, 4) * 70) + 'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const navlinks = [...document.querySelectorAll('nav.links a')].filter(a => a.getAttribute('href').startsWith('#'));
+  const sections = navlinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navlinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  sections.forEach(s => s && spy.observe(s));
+</script>
+</body>
+</html>
